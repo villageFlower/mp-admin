@@ -1,6 +1,7 @@
 <template>
     <div>
-        <el-row :gutter="20">
+        <h1>Welcome to MP demo Admin portal</h1>
+        <!-- <el-row :gutter="20">
             <el-col :span="8">
                 <el-card shadow="hover" class="mgb20" style="height:252px;">
                     <div class="user-info">
@@ -11,7 +12,7 @@
                         </div>
                     </div>
                     <div class="user-info-list">
-                        上次登录时间：
+                        Lost Login：
                         <span>2019-11-01</span>
                     </div>
                     <div class="user-info-list">
@@ -110,7 +111,7 @@
                     <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
                 </el-card>
             </el-col>
-        </el-row>
+        </el-row> -->
     </div>
 </template>
 

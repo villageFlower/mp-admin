@@ -11,13 +11,13 @@
         <div class="tags-close-box">
             <el-dropdown @command="handleTags">
                 <el-button size="mini" type="primary">
-                    标签选项
+                    Tabs
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <template #dropdown>
                     <el-dropdown-menu size="small">
-                        <el-dropdown-item command="other">关闭其他</el-dropdown-item>
-                        <el-dropdown-item command="all">关闭所有</el-dropdown-item>
+                        <el-dropdown-item command="other">Close Others</el-dropdown-item>
+                        <el-dropdown-item command="all">Close All</el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
             </el-dropdown>
@@ -174,7 +174,7 @@ export default {
     box-sizing: border-box;
     padding-top: 1px;
     text-align: center;
-    width: 110px;
+    width: 140px;
     height: 30px;
     background: #fff;
     box-shadow: -3px 0 15px 3px rgba(0, 0, 0, 0.1);

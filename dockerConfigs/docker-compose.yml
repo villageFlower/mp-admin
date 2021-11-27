@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  vuemanagesystem:
+    image: vuemanagesystem
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8898:80

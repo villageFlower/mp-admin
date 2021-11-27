@@ -1,6 +1,7 @@
 import {createRouter, createWebHashHistory} from "vue-router";
 import Home from "../views/Home.vue";
-
+import { cookies } from "../utils/cookies"
+ 
 const routes = [
     {
         path: '/',
@@ -11,17 +12,57 @@ const routes = [
         component: Home,
         children: [
             {
+                path: "/products",
+                name: "products",
+                meta: {
+                    title: 'Product List'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/Products.vue")
+            },
+            {
+                path: "/addProduct",
+                name: "addProduct",
+                meta: {
+                    title: 'Add Product'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/AddProduct.vue")
+            },
+            {
+                path: "/editProduct/:id",
+                name: "editProduct",
+                meta: {
+                    title: 'Edit Product'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/EditProduct.vue")
+            },
+            {
+                path: "/category",
+                name: "category",
+                meta: {
+                    title: ' Product Categories'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/Category.vue")
+            },
+            {
+                path: "/addCategory",
+                name: "addCategory",
+                meta: {
+                    title: 'Add Category'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/AddCategory.vue")
+            },
+            {
                 path: "/dashboard",
                 name: "dashboard",
                 meta: {
-                    title: '系统首页'
+                    title: 'Dashboard'
                 },
                 component: () => import ( /* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
             }, {
                 path: "/table",
                 name: "basetable",
                 meta: {
-                    title: '表格'
+                    title: 'tables'
                 },
                 component: () => import ( /* webpackChunkName: "table" */ "../views/BaseTable.vue")
             }, {
@@ -128,17 +169,11 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title} | vue-manage-system`;
-    const role = localStorage.getItem('ms_username');
-    if (!role && to.path !== '/login') {
+    const token = cookies.get("api-token");
+    if (!token && to.path !== '/login') {
         next('/login');
-    } else if (to.meta.permission) {
-        // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已
-        role === 'admin'
-            ? next()
-            : next('/403');
-    } else {
-        next();
-    }
+    } 
+    next()
 });
 
 export default router;

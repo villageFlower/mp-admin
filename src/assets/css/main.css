@@ -97,6 +97,9 @@ a {
 .form-box {
     width: 600px;
 }
+.wide-form-box {
+    width: 850px;
+}
 
 .form-box .line {
     text-align: center;
