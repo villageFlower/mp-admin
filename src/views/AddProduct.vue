@@ -47,8 +47,8 @@
           </el-form-item>
 
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">表单提交</el-button>
-            <el-button @click="onReset">重置表单</el-button>
+            <el-button type="primary" @click="onSubmit">Submit</el-button>
+            <el-button @click="onReset">Reset form</el-button>
           </el-form-item>
         </el-form>
       </div>
