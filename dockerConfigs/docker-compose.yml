@@ -2,9 +2,7 @@ version: '3.4'
 
 services:
   vuemanagesystem:
-    image: vuemanagesystem
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    image: ghcr.io/villageflower/mp_admin:latest
+
     ports:
       - 8898:80
